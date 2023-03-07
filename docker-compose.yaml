@@ -9,9 +9,9 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Chicago
-      - PASSWORD=Max1Marnie
-      - SUDO_PASSWORD=Max1Marnie
+      - TZ=$TZ
+      - PASSWORD=$PASSWORD
+      - SUDO_PASSWORD=$SUDO_PASSWORD
       - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - ./config:/config
