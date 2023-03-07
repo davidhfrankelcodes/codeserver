@@ -1,0 +1,21 @@
+---
+version: "2.1"
+services:
+  code-server:
+    # image: lscr.io/linuxserver/code-server:latest
+    build: .
+    container_name: code-server
+    hostname: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - PASSWORD=Max1Marnie
+      - SUDO_PASSWORD=Max1Marnie
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - ./config:/config
+    ports:
+      - 8443:8443
+      - 5100:5000
+    restart: unless-stopped
